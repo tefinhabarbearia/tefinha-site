@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tefinha Barbearia</title>
+  
+  <!-- Google Ads Global Site Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-XXXXXXXXXX');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -90,12 +100,19 @@
       border: 1px solid #333;
     }
     .info i { margin-right: 0.5rem; color: #ff4444; }
-    .info iframe {
+    .map-button {
+      display: inline-block;
       margin-top: 1rem;
-      border-radius: 1rem;
-      width: 100%;
-      height: 250px;
-      border: none;
+      background: #25d366;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .map-button:hover {
+      background: #1ebe57;
     }
     .whatsapp-button {
       position: fixed;
@@ -147,32 +164,47 @@
           <div class="plan-title">Corte Ilimitado (Seg a Sexta)</div>
           <div class="plan-includes">✅ Penteado<br>✅ Pezinho<br>✅ Corte seu cabelo quantas vezes quiser</div>
           <div class="plan-price"><s>R$ 119,90</s><span class="current">R$ 89,90</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+             onclick="gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/ASSINAR1'});">
+            ASSINAR
+          </a>
         </div>
         <div class="plan">
           <div class="plan-title">Barba Terapia</div>
           <div class="plan-includes">✅ Pezinho<br>✅ Faça sua barba quantas vezes quiser</div>
           <div class="plan-price"><s>R$ 129,90</s><span class="current">R$ 99,90</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+             onclick="gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/ASSINAR2'});">
+            ASSINAR
+          </a>
         </div>
         <div class="plan">
           <div class="plan-title">Corte e Barba (Seg a Sexta)</div>
           <div class="plan-includes">✅ Corte seu cabelo quantas vezes quiser<br>✅ Penteado<br>✅ Faça sua barba quantas vezes quiser<br>✅ Pezinho</div>
           <div class="plan-price"><s>R$ 199,90</s><span class="current">R$ 164,90</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+             onclick="gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/ASSINAR3'});">
+            ASSINAR
+          </a>
         </div>
         <div class="plan">
           <div class="plan-title">Plano One (Seg a Sexta)</div>
           <div class="plan-includes">✅ Corte único ao mês</div>
           <div class="plan-price"><s>R$ 45,00</s><span class="current">R$ 35,00</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+             onclick="gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/ASSINAR4'});">
+            ASSINAR
+          </a>
         </div>
       </div>
     </div>
     <div class="info">
       <p><i class="fa-solid fa-location-dot"></i><strong> Endereço:</strong> 303 Norte, NS 03, QI 17, ARNO 31 – Palmas/TO</p>
       <p><i class="fa-regular fa-clock"></i><strong> Funcionamento:</strong> Seg a Sex: 09h às 20h | Sáb: 09h às 16h</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.1224229500594!2d-48.344263425750455!3d-10.170703289943546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9324cb6e80722ac3%3A0x4ac054049c577179!2sTefinha%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1751548262887!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a href="https://maps.app.goo.gl/zu5mgzKGQoPJKFhV9" target="_blank" class="map-button"
+         onclick="gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/MAP_CLICK'});">
+        Abrir mapa no Google Maps
+      </a>
     </div>
     <a href="https://wa.me/5563991396063" class="whatsapp-button" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
