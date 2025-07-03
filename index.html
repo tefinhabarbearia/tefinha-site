@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tefinha Barbearia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Red Hat Display', sans-serif;
+      background-color: #000; color: white;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .logo { width: 120px; margin-bottom: 2rem; }
+    .title { font-size: 2rem; }
+    .white-part { color: white; font-weight: 400; }
+    .red-part {
+      font-weight: 700;
+      background: linear-gradient(to right, #ff0000, #880000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle { font-size: 1.2rem; margin-top: 1rem; color: #ccc; }
+    .subtitle strong { font-weight: 700; }
+    .spacer { height: 1.5rem; }
+    .plan-section h2 {
+      margin-top: 3rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .plan-section h2 .red {
+      font-weight: 700;
+      background: linear-gradient(to right, #ff0000, #880000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .plans {
+      display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;
+    }
+    .plan {
+      background-color: #111;
+      border: 2px solid;
+      border-image: linear-gradient(to right, #ff0000, #000) 1;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+    .plan.visible { opacity: 1; transform: translateY(0); }
+    .plan-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .plan-includes { font-size: 1rem; color: #ccc; margin-bottom: 1rem; }
+    .plan-price { text-align: left; margin-bottom: 1rem; }
+    .plan-price s {
+      font-size: 0.9rem; color: #888; display: block;
+    }
+    .plan-price .current {
+      font-size: 1.4rem;
+      color: #00ff00;
+      font-weight: bold;
+      display: block;
+    }
+    .plan-price .mensal { color: #00ff00; font-size: 1rem; margin-top: 2px; }
+    .button {
+      background-color: black;
+      border: 2px solid;
+      border-image: linear-gradient(to right, #00ff88, #00cc66) 1;
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover { transform: scale(1.05); }
+    .info {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 1rem;
+      line-height: 1.8rem;
+      background-color: #111;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid #333;
+    }
+    .info i { margin-right: 0.5rem; color: #ff4444; }
+    .info iframe {
+      margin-top: 1rem;
+      border-radius: 1rem;
+      width: 100%;
+      height: 250px;
+      border: none;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 255, 100, 0.6);
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+    .whatsapp-button img { width: 28px; height: 28px; }
+    .whatsapp-button:hover { transform: scale(1.1); }
+    @media (min-width: 768px) {
+      .intro { display: flex; align-items: center; gap: 3rem; }
+      .intro-text { flex: 1; }
+      .intro-img { flex: 1; }
+      .plans { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
+      .plan { width: 48%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="intro">
+      <div class="intro-text">
+        <img src="https://cristhpacks.wordpress.com/wp-content/uploads/2025/07/logo-tefinha-vertical-branca.png" alt="Logo" class="logo">
+        <h1 class="title">
+          <span class="white-part">A sua </span>
+          <span class="red-part">Barbearia por Assinatura </span>
+          <span class="white-part">em Palmas Tocantins</span>
+        </h1>
+        <p class="subtitle">Faça parte do Club Tefinha Barbearia e mantenha seu cabelo e barba <strong>sempre alinhados</strong>.</p>
+        <div class="spacer"></div>
+      </div>
+      <div class="intro-img">
+        <img src="https://cristhpacks.wordpress.com/wp-content/uploads/2025/07/28e051daeaabb3f9bf49271462ff3024.jpg" alt="Tefinha" style="width: 100%; max-width: 400px; border-radius: 1rem;">
+      </div>
+    </div>
+    <div class="plan-section">
+      <h2><span class="white">Conheça </span><span class="red">nossos planos</span></h2>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-title">Corte Ilimitado (Seg a Sexta)</div>
+          <div class="plan-includes">✅ Penteado<br>✅ Pezinho<br>✅ Corte seu cabelo quantas vezes quiser</div>
+          <div class="plan-price"><s>R$ 119,90</s><span class="current">R$ 89,90</span><span class="mensal">mensal</span></div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+        </div>
+        <div class="plan">
+          <div class="plan-title">Barba Terapia</div>
+          <div class="plan-includes">✅ Pezinho<br>✅ Faça sua barba quantas vezes quiser</div>
+          <div class="plan-price"><s>R$ 129,90</s><span class="current">R$ 99,90</span><span class="mensal">mensal</span></div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+        </div>
+        <div class="plan">
+          <div class="plan-title">Corte e Barba (Seg a Sexta)</div>
+          <div class="plan-includes">✅ Corte seu cabelo quantas vezes quiser<br>✅ Penteado<br>✅ Faça sua barba quantas vezes quiser<br>✅ Pezinho</div>
+          <div class="plan-price"><s>R$ 199,90</s><span class="current">R$ 164,90</span><span class="mensal">mensal</span></div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+        </div>
+        <div class="plan">
+          <div class="plan-title">Plano One (Seg a Sexta)</div>
+          <div class="plan-includes">✅ Corte único ao mês</div>
+          <div class="plan-price"><s>R$ 45,00</s><span class="current">R$ 35,00</span><span class="mensal">mensal</span></div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button">ASSINAR</a>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      <p><i class="fa-solid fa-location-dot"></i><strong> Endereço:</strong> 303 Norte, NS 03, QI 17, ARNO 31 – Palmas/TO</p>
+      <p><i class="fa-regular fa-clock"></i><strong> Funcionamento:</strong> Seg a Sex: 09h às 20h | Sáb: 09h às 16h</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.1224229500594!2d-48.344263425750455!3d-10.170703289943546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9324cb6e80722ac3%3A0x4ac054049c577179!2sTefinha%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1751548262887!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <a href="https://wa.me/5563991396063" class="whatsapp-button" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+  </div>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.plan').forEach(plan => {
+      observer.observe(plan);
+    });
+  </script>
+</body>
+</html>
