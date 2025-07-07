@@ -5,15 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tefinha Barbearia</title>
 
-  <!-- Google Ads Global Site Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-123456789"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-123456789');
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17078584708"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'AW-17078584708');
+</script>
+
+  <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (e) {
+      const clickedElement = e.target.closest('a');
+
+      if (!clickedElement) return;
+
+      const href = clickedElement.getAttribute('href');
+
+      if (href.includes('wa.me')) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17078584708/Q2hOCOb_wusaEISL2s8_'
+        });
+      } else if (href.includes('maps')) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17078584708/gOv4COn_wusaEISL2s8_'
+        });
+      } else if (href.includes('admin.frizzar')) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17078584708/jkcxCOz_wusaEISL2s8_'
+        });
+      }
+    });
+  });
+</script>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
