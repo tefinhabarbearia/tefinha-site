@@ -2,453 +2,700 @@
 <html lang="pt-br">
 <head>
 
-<link rel="icon" type="image/png" href="https://convidatasshop.wordpress.com/wp-content/uploads/2026/01/novo-projeto-8.png">
+  <link rel="icon" type="image/png" href="https://convidatasshop.wordpress.com/wp-content/uploads/2026/01/novo-projeto-8.png">
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tefinha Barbearia</title>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17078584708"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17078584708');
-</script>
+  <!-- Google tag (gtag.js) – MANTIDO INTACTO -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17078584708"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17078584708');
+  </script>
 
   <script>
-  window.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('click', function (e) {
-      const clickedElement = e.target.closest('a');
+    window.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('click', function (e) {
+        const clickedElement = e.target.closest('a');
+        if (!clickedElement) return;
+        const href = clickedElement.getAttribute('href') || '';
 
-      if (!clickedElement) return;
-
-      const href = clickedElement.getAttribute('href');
-
-      if (href.includes('wa.me')) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17078584708/Q2hOCOb_wusaEISL2s8_'
-        });
-      } else if (href.includes('maps')) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17078584708/gOv4COn_wusaEISL2s8_'
-        });
-      } else if (href.includes('admin.frizzar')) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17078584708/jkcxCOz_wusaEISL2s8_'
-        });
-      }
+        if (href.includes('wa.me')) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17078584708/Q2hOCOb_wusaEISL2s8_'
+          });
+        } else if (href.includes('maps')) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17078584708/gOv4COn_wusaEISL2s8_'
+          });
+        } else if (href.includes('admin.frizzar')) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17078584708/jkcxCOz_wusaEISL2s8_'
+          });
+        }
+      });
     });
-  });
-</script>
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
-    /* Base Reset & Typography */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Red Hat Display', sans-serif;
       background-color: #000;
-      color: #e0e0e0;
+      color: #f5f5f5;
       overflow-x: hidden;
       line-height: 1.5;
       scroll-behavior: smooth;
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; } /* Padding reduzido */
 
-    /* Animations & Keyframes */
-    @keyframes fadeInSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes pulseShadow {
-      0% { box-shadow: 0 0 10px rgba(0, 255, 100, 0.5); }
-      50% { box-shadow: 0 0 20px rgba(0, 255, 100, 0.8); }
-      100% { box-shadow: 0 0 10px rgba(0, 255, 100, 0.5); }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
     }
 
-    /* General Elements */
-    .section-spacing { margin-top: 4rem; } /* Espaçamento reduzido */
-    .card-base {
-      background-color: #0d0d0d;
-      border-radius: 0.6rem; /* Bordas mais sutis */
-      padding: 2rem; /* Padding reduzido */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease-out;
-      opacity: 0;
-      transform: translateY(20px);
+    .section-spacing { margin-top: 4rem; }
+
+    /* Animação */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .card-base.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: fadeInSlideUp 0.6s ease-out forwards;
-    }
-    .section-title {
-      font-size: 2.2rem; /* Tamanho reduzido */
-      text-align: center;
-      margin-bottom: 2.5rem;
-      line-height: 1.2;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.7s ease-out;
-    }
-    .section-title.visible { opacity: 1; transform: translateY(0); }
-    .section-title .red {
+    .animate { opacity: 0; transform: translateY(18px); }
+    .animate.visible { opacity: 1; transform: translateY(0); animation: fadeUp .5s ease-out forwards; }
+
+    /* BOTÕES – pill, sem quadrado atrás */
+    .btn-outline-green {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 2.4rem;
+      border-radius: 999px;
+      border: 1.5px solid #00ff66;
+      background: transparent;
+      color: #ffffff;
+      font-size: 0.9rem;
       font-weight: 700;
-      background: linear-gradient(to right, #e00000, #a00000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .button {
-      background-color: transparent;
-      border: 2px solid;
-      border-image: linear-gradient(to right, #00e676, #00b359) 1;
-      color: white;
-      padding: 0.8rem 2rem; /* Padding reduzido */
-      border-radius: 25px; /* Bordas mais compactas */
-      font-weight: bold;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease;
       text-decoration: none;
-      display: inline-block;
-      font-size: 0.95rem; /* Fonte reduzida */
-      letter-spacing: 0.06em;
-      box-shadow: 0 3px 10px rgba(0, 230, 118, 0.15);
+      transition: all 0.25s ease;
     }
-    .button:hover {
-      background: linear-gradient(to right, #00e676, #00b359);
+    .btn-outline-green:hover {
+      background: #00ff66;
       color: #000;
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 6px 15px rgba(0, 230, 118, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 0 14px rgba(0,255,102,0.4);
     }
 
-    /* Intro Section */
+    /* HERO / INTRO */
     .intro {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2.5rem; /* Gap reduzido */
+      gap: 2.5rem;
       padding-top: 2.5rem;
       text-align: center;
     }
-    .intro-text {
-      flex: 1;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.7s ease-out;
+
+    .intro-left { flex: 1; }
+    .intro-right { flex: 1; display: flex; justify-content: center; }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 1.5rem;
     }
-    .intro-text.visible { opacity: 1; transform: translateY(0); }
-    .intro-img {
-      flex: 1;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.7s ease-out 0.2s;
+
+    .hero-title {
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin-bottom: 1rem;
     }
-    .intro-img.visible { opacity: 1; transform: translateY(0); }
-    .logo { width: 140px; margin-bottom: 1.5rem; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)); } /* Tamanho reduzido */
-    .title { font-size: 2.8rem; line-height: 1.1; margin-bottom: 1rem; } /* Fonte reduzida */
-    .white-part { color: white; font-weight: 400; }
-    .red-part {
-      font-weight: 700;
-      background: linear-gradient(to right, #e00000, #a00000);
+
+    .hero-title .red {
+      background: linear-gradient(to right, #ff0000, #a00000);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-weight: 700;
     }
-    .subtitle { font-size: 1.3rem; margin-top: 0.8rem; color: #b0b0b0; max-width: 600px; margin-left: auto; margin-right: auto; } /* Fonte reduzida */
-    .subtitle strong { font-weight: 700; }
 
-    /* Plans Section */
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #bdbdbd;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .intro-right img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 1.4rem;
+      object-fit: cover;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.8);
+    }
+
+    /* “Conheça nossos planos” – um pouco maior */
+    .scroll-hint {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 1.35rem;
+    }
+    .scroll-hint span.red {
+      background: linear-gradient(to right, #ff0000, #a00000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    /* PLANOS */
     .plans-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem; /* Gap reduzido */
-      margin-top: 1.5rem;
+      gap: 2rem;
+      margin-top: 2rem;
     }
+
     .plan-card {
-      @extend .card-base;
-      border: 1px solid;
-      border-image: linear-gradient(to right, #e00000, #600000) 1;
+      border-radius: 1.6rem;
+      background: #050505;
+      border: 1px solid #ff0000;
+      padding: 2.2rem 2rem;
       text-align: center;
-      padding: 2rem 1.5rem; /* Padding reduzido */
     }
-    .plan-card:hover {
-      transform: translateY(-5px) scale(1.01);
-      box-shadow: 0 8px 25px rgba(224, 0, 0, 0.25);
+
+    .plan-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
     }
-    .plan-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #fff; } /* Fonte reduzida */
+
+    .plan-subtitle {
+      font-size: 0.9rem;
+      color: #b4b4b4;
+      margin-bottom: 1.4rem;
+    }
+
     .plan-includes {
-      font-size: 1rem; /* Fonte reduzida */
-      color: #c0c0c0;
-      margin-bottom: 1.2rem;
       text-align: left;
-      padding-left: 1rem;
+      margin: 0 auto 1.6rem;
+      max-width: 260px;
+      font-size: 0.98rem;
+      color: #e0e0e0;
     }
-    .plan-includes br { margin-bottom: 0.4rem; }
-    .plan-price { text-align: center; margin-bottom: 1.2rem; }
+
+    .plan-includes p {
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .plan-includes i {
+      color: #00ff66;
+      font-size: 0.95rem;
+    }
+
+    .plan-price {
+      margin: 0.8rem 0 1.5rem;
+    }
+
     .plan-price s {
-      font-size: 0.9rem; color: #888; display: block; margin-bottom: 0.3rem;
-    }
-    .plan-price .current {
-      font-size: 1.8rem; /* Tamanho reduzido */
-      color: #00e676;
-      font-weight: bold;
       display: block;
-      text-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
-    }
-    .plan-price .mensal { color: #00e676; font-size: 1rem; margin-top: 4px; } /* Fonte reduzida */
-
-    /* Protese Section */
-    .protese-section {
-      @extend .card-base;
-      border: 1px solid;
-      border-image: linear-gradient(to right, #00e676, #00b359) 1;
-      text-align: center;
-      padding: 2.5rem 2rem; /* Padding reduzido */
-    }
-    .protese-section h2 {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      font-size: 2rem; /* Tamanho reduzido */
-    }
-    .protese-section p {
-      font-size: 1.1rem; /* Fonte reduzida */
-      color: #c0c0c0;
-      margin-bottom: 2rem;
-      line-height: 1.7;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 0.2rem;
     }
 
-    /* Info Section (Address, Hours, Map) */
-    .info-section {
-      @extend .card-base;
-      text-align: center;
-      padding: 2.5rem 2rem; /* Padding reduzido */
-      border: 1px solid #333;
+    .plan-price .value {
+      font-size: 1.8rem;
+      color: #00ff66;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(0,255,102,0.45);
     }
-    .info-section p {
+
+    .plan-price .mensal {
+      font-size: 0.9rem;
+      color: #00ff66;
+      margin-top: 0.2rem;
+    }
+
+    /* PRÓTESE CAPILAR */
+    .protese-card {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 1.6rem;
+      background: #050505;
+      border: 1px solid #00ff66;
+      padding: 2.2rem 2rem;
+      text-align: center;
+    }
+
+    .protese-card h2 {
+      font-size: 1.7rem;
       margin-bottom: 1rem;
-      font-size: 1rem; /* Fonte reduzida */
-      color: #c0c0c0;
-    }
-    .info-section i { margin-right: 0.8rem; color: #e00000; font-size: 1.2rem; } /* Ícones menores */
-    .address-image {
-      width: 100%;
-      max-width: 400px; /* Tamanho reduzido */
-      height: auto;
-      border-radius: 0.6rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease;
-    }
-    .address-image:hover {
-      transform: scale(1.02);
-    }
-    .map-container {
-      margin-top: 2rem;
-      border-radius: 0.6rem;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-    }
-    .map-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .map-button {
-      display: inline-block;
-      margin-top: 2rem;
-      background: #25d366;
-      color: white;
-      padding: 0.9rem 2.2rem; /* Padding reduzido */
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 1rem; /* Fonte reduzida */
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
-    }
-    .map-button:hover {
-      background: #1ebe57;
-      transform: translateY(-3px) scale(1.04);
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
     }
 
-    /* WhatsApp Button */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 60px; /* Tamanho reduzido */
-      height: 60px;
-      background-color: #25D366;
+    .protese-card h2 span.red {
+      background: linear-gradient(to right, #ff0000, #a00000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .protese-card p {
+      font-size: 1rem;
+      color: #d0d0d0;
+      max-width: 620px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.6;
+    }
+
+    /* LOCALIZAÇÃO – igual à referência */
+    .location-wrapper {
+      border-radius: 2.2rem;
+      background: #050505;
+      padding: 2.5rem 2.2rem 2.2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .location-left h2 {
+      font-size: 2.1rem;
+      margin-bottom: 2rem;
+    }
+    .location-left h2 span.red {
+      background: linear-gradient(to right, #ff0000, #a00000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .loc-box {
+      background: #3f3f3f;
+      border-radius: 999px;
+      padding: 1.1rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #f5f5f5;
+      font-size: 0.93rem;
+    }
+
+    .loc-box + .loc-box {
+      margin-top: 1rem;
+    }
+
+    .loc-icon {
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
+      background: #2b2b2b;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(0, 255, 100, 0.6);
-      z-index: 1000;
-      transition: all 0.3s ease;
-      animation: pulseShadow 2s infinite;
-    }
-    .whatsapp-button img { width: 28px; height: 28px; } /* Ícone menor */
-    .whatsapp-button:hover {
-      transform: scale(1.15) rotate(8deg);
-      box-shadow: 0 0 25px rgba(0, 255, 100, 0.9);
-      animation: none;
+      flex-shrink: 0;
     }
 
-    /* Media Queries for Responsiveness */
-    @media (min-width: 768px) {
-      .intro { flex-direction: row; text-align: left; }
-      .intro-text { animation: slideInLeft 0.8s ease-out forwards; }
-      .intro-img { animation: slideInRight 0.8s ease-out forwards 0.2s; }
-      .plans-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .section-title { font-size: 2.8rem; }
-      .title { font-size: 3.2rem; }
-      .subtitle { font-size: 1.4rem; }
+    .loc-icon i {
+      font-size: 1.1rem;
+      color: #ffffff;
     }
-    @media (min-width: 1024px) {
-      .plans-grid {
-        grid-template-columns: repeat(4, 1fr);
+
+    .loc-text {
+      line-height: 1.5;
+    }
+
+    .location-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    .loc-photo img {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 1.6rem;
+      object-fit: cover;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.85);
+      display: block;
+    }
+
+    /* MAPA grande, centralizado, com bordas arredondadas brancas como na referência */
+    .loc-map {
+      width: 100%;
+      max-width: 760px;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .loc-map iframe {
+      display: block;
+      width: 100%;
+      height: 260px;
+      border: none;
+    }
+
+    .loc-button-wrapper {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #00e676;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(0,230,118,0.7);
+      z-index: 20;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .whatsapp-button img {
+      width: 28px;
+      height: 28px;
+    }
+    .whatsapp-button:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 26px rgba(0,230,118,0.9);
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.3rem;
       }
-      .plan-card { padding: 2.5rem 2rem; }
-      .protese-section { padding: 3rem 2.5rem; }
-      .info-section { padding: 3rem 2.5rem; }
+      .intro {
+        gap: 2rem;
+        padding-top: 2rem;
+      }
+      .hero-title {
+        font-size: 1.9rem;
+      }
+      .hero-subtitle {
+        font-size: 0.95rem;
+        max-width: 100%;
+      }
+      .intro-right img {
+        max-width: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.7);
+      }
+      .scroll-hint {
+        font-size: 1.1rem;
+        margin-top: 2rem;
+      }
+      .plans-grid {
+        gap: 1.4rem;
+        margin-top: 1.6rem;
+      }
+      .plan-card {
+        padding: 1.8rem 1.4rem;
+        border-radius: 1.3rem;
+      }
+      .plan-title {
+        font-size: 1.25rem;
+      }
+      .plan-subtitle {
+        font-size: 0.8rem;
+      }
+      .plan-includes {
+        font-size: 0.9rem;
+        max-width: 100%;
+      }
+      .plan-price .value {
+        font-size: 1.6rem;
+      }
+      .btn-outline-green {
+        padding: 0.6rem 1.9rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+      }
+      .protese-card {
+        padding: 1.9rem 1.4rem;
+        border-radius: 1.3rem;
+      }
+      .protese-card h2 {
+        font-size: 1.4rem;
+      }
+      .protese-card p {
+        font-size: 0.95rem;
+      }
+      .location-wrapper {
+        padding: 2rem 1.4rem 1.8rem;
+        border-radius: 1.8rem;
+      }
+      .location-left h2 {
+        font-size: 1.7rem;
+        margin-bottom: 1.6rem;
+      }
+      .loc-box {
+        padding: 0.9rem 1.3rem;
+        font-size: 0.85rem;
+      }
+      .loc-icon {
+        width: 34px;
+        height: 34px;
+      }
+      .loc-icon i {
+        font-size: 0.95rem;
+      }
+      .loc-map {
+        max-width: 100%;
+        border-radius: 1.4rem;
+      }
+      .loc-map iframe {
+        height: 220px;
+      }
+      .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        bottom: 14px;
+        right: 14px;
+      }
+      .whatsapp-button img {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    /* DESKTOP */
+    @media (min-width: 769px) {
+      .intro {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+      }
+      .plans-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .location-wrapper {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="intro">
-      <div class="intro-text">
-        <img src="https://cristhpacks.wordpress.com/wp-content/uploads/2025/07/logo-tefinha-vertical-branca.png" alt="Logo" class="logo">
-        <h1 class="title">
-          <span class="white-part">A sua </span>
-          <span class="red-part">Barbearia por Assinatura </span>
-          <span class="white-part">em Palmas Tocantins</span>
+
+    <!-- HERO -->
+    <section class="intro">
+      <div class="intro-left animate">
+        <img src="https://convidatasshop.wordpress.com/wp-content/uploads/2026/01/novo-projeto-8.png"
+             alt="Logo Tefinha Barbearia" class="logo">
+        <h1 class="hero-title">
+          A sua <span class="red">Barbearia por Assinatura</span> em Palmas Tocantins
         </h1>
-        <p class="subtitle">Faça parte do Club Tefinha Barbearia e mantenha seu cabelo e barba <strong>sempre alinhados</strong>.</p>
+        <p class="hero-subtitle">
+          Faça parte do Club Tefinha Barbearia e mantenha seu cabelo e barba <strong>sempre alinhados</strong>.
+        </p>
       </div>
-      <div class="intro-img">
-        <img src="https://cristhpacks.wordpress.com/wp-content/uploads/2025/07/28e051daeaabb3f9bf49271462ff3024.jpg" alt="Tefinha" style="width: 100%; max-width: 350px; border-radius: 0.8rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);">
+      <div class="intro-right animate">
+        <img src="https://cristhpacks.wordpress.com/wp-content/uploads/2025/07/28e051daeaabb3f9bf49271462ff3024.jpg"
+             alt="Barbeira Tefinha Barbearia">
       </div>
+    </section>
+
+    <!-- “Conheça nossos planos” -->
+    <div class="scroll-hint section-spacing animate">
+      <span>Conheça </span><span class="red">nossos planos</span>
     </div>
 
-    <div class="section-spacing">
-      <h2 class="section-title"><span class="white">Conheça </span><span class="red">nossos planos</span></h2>
+    <!-- PLANOS -->
+    <section class="section-spacing">
       <div class="plans-grid">
-        <div class="plan-card">
-          <div class="plan-title">Corte Ilimitado (Seg a Sexta)</div>
-          <div class="plan-includes">✅ Penteado<br>✅ Pezinho<br>✅ Corte seu cabelo quantas vezes quiser</div>
-          <div class="plan-price"><s>R$ 119,90</s><span class="current">R$ 89,90</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+        <div class="plan-card animate">
+          <h3 class="plan-title">Corte Ilimitado</h3>
+          <p class="plan-subtitle">(Segunda a Sexta)</p>
+          <div class="plan-includes">
+            <p><i class="fa-solid fa-check"></i> Penteado</p>
+            <p><i class="fa-solid fa-check"></i> Pezinho</p>
+            <p><i class="fa-solid fa-check"></i> Corte seu cabelo quantas vezes quiser</p>
+          </div>
+          <div class="plan-price">
+            <s>R$ 119,90</s>
+            <span class="value">R$ 89,90</span>
+            <span class="mensal">mensal</span>
+          </div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia"
+             class="btn-outline-green"
              onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/ASSINAR1'});">
             ASSINAR
           </a>
         </div>
-        <div class="plan-card">
-          <div class="plan-title">Barba Terapia</div>
-          <div class="plan-includes">✅ Pezinho<br>✅ Faça sua barba quantas vezes quiser</div>
-          <div class="plan-price"><s>R$ 129,90</s><span class="current">R$ 99,90</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+
+        <div class="plan-card animate">
+          <h3 class="plan-title">Barba Terapia</h3>
+          <p class="plan-subtitle">(Segunda a Sexta)</p>
+          <div class="plan-includes">
+            <p><i class="fa-solid fa-check"></i> Pezinho</p>
+            <p><i class="fa-solid fa-check"></i> Faça sua barba quantas vezes quiser</p>
+          </div>
+          <div class="plan-price">
+            <s>R$ 129,90</s>
+            <span class="value">R$ 99,90</span>
+            <span class="mensal">mensal</span>
+          </div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia"
+             class="btn-outline-green"
              onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/ASSINAR2'});">
             ASSINAR
           </a>
         </div>
-        <div class="plan-card">
-          <div class="plan-title">Corte e Barba (Seg a Sexta)</div>
-          <div class="plan-includes">✅ Corte seu cabelo quantas vezes quiser<br>✅ Penteado<br>✅ Faça sua barba quantas vezes quiser<br>✅ Pezinho</div>
-          <div class="plan-price"><s>R$ 199,90</s><span class="current">R$ 164,90</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+
+        <div class="plan-card animate">
+          <h3 class="plan-title">Corte e Barba</h3>
+          <p class="plan-subtitle">(Segunda a Sexta)</p>
+          <div class="plan-includes">
+            <p><i class="fa-solid fa-check"></i> Corte seu cabelo quantas vezes quiser</p>
+            <p><i class="fa-solid fa-check"></i> Penteado</p>
+            <p><i class="fa-solid fa-check"></i> Faça sua barba quantas vezes quiser</p>
+            <p><i class="fa-solid fa-check"></i> Pezinho</p>
+          </div>
+          <div class="plan-price">
+            <s>R$ 199,90</s>
+            <span class="value">R$ 164,90</span>
+            <span class="mensal">mensal</span>
+          </div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia"
+             class="btn-outline-green"
              onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/ASSINAR3'});">
             ASSINAR
           </a>
         </div>
-        <div class="plan-card">
-          <div class="plan-title">Plano One (Seg a Sexta)</div>
-          <div class="plan-includes">✅ Corte único ao mês</div>
-          <div class="plan-price"><s>R$ 45,00</s><span class="current">R$ 35,00</span><span class="mensal">mensal</span></div>
-          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia" class="button"
+
+        <div class="plan-card animate">
+          <h3 class="plan-title">Plano One</h3>
+          <p class="plan-subtitle">(Segunda a Sexta)</p>
+          <div class="plan-includes">
+            <p><i class="fa-solid fa-check"></i> Corte único ao mês</p>
+          </div>
+          <div class="plan-price">
+            <s>R$ 45,00</s>
+            <span class="value">R$ 35,00</span>
+            <span class="mensal">mensal</span>
+          </div>
+          <a href="https://admin.frizzar.com.br/assinatura/assinaturas.xhtml?empresa=tefinhabarbearia"
+             class="btn-outline-green"
              onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/ASSINAR4'});">
             ASSINAR
           </a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section-spacing">
-      <div class="protese-section">
-        <h2 class="section-title"><span class="white">Conheça nossa </span><span class="red">Prótese Capilar</span></h2>
-        <p>Descubra a solução perfeita para recuperar sua autoestima com nossas próteses capilares de alta qualidade. Naturalidade e conforto garantidos!</p>
-        <a href="https://wa.me/5563991396063?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20pr%C3%B3tese%20capilar" class="button"
+    <!-- PRÓTESE CAPILAR -->
+    <section class="section-spacing">
+      <div class="protese-card animate">
+        <h2>
+          <span class="white">Conheça nossa </span><span class="red">Prótese Capilar</span>
+        </h2>
+        <p>
+          Tenha um visual renovado com próteses capilares de alta qualidade, acabamento natural
+          e aplicação profissional. Conforto, segurança e estilo para o seu dia a dia.
+        </p>
+        <a href="https://wa.me/5563991396063?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20pr%C3%B3tese%20capilar"
+           class="btn-outline-green"
            onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/PROTESE_SAIBA_MAIS'});">
-          Saiba Mais
+          SAIBA MAIS
         </a>
       </div>
-    </div>
+    </section>
 
-    <div class="section-spacing">
-      <div class="info-section">
-        <h2 class="section-title"><span class="white">Onde nos </span><span class="red">encontrar</span></h2>
-        <p><i class="fa-solid fa-location-dot"></i><strong> Endereço:</strong> 303 Norte, NS 03, QI 17, ARNO 31 – Palmas/TO</p>
-        <img src="https://convidatasshop.wordpress.com/wp-content/uploads/2026/01/2026-03-26.webp" alt="Fachada da Barbearia" class="address-image">
-        <p><i class="fa-regular fa-clock"></i><strong> Funcionamento:</strong> Seg a Sex: 09h às 20h | Sáb: 09h às 16h</p>
+    <!-- LOCALIZAÇÃO (como na referência) -->
+    <section class="section-spacing">
+      <div class="location-wrapper animate">
+        <!-- ESQUERDA: texto + chips -->
+        <div class="location-left">
+          <h2>
+            <span class="white">Nossa </span><span class="red">Localização</span>
+          </h2>
 
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.9892497302135!2d-48.34471012614799!3d-10.181527909979414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9324cb6e80722ac3%3A0x4ac054049c577179!2sTefinha%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1774556844662!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="loc-box">
+            <div class="loc-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="loc-text">
+              Quadra ACNO 01, Avenida LO 02, conjunto 04, lote 01-E Condomínio Patio 103 norte, Sala comercial 04 (103 N – I, Av. LO 02, S/N), em - Plano Diretor Norte, Palmas - TO, 77001-020
+            </div>
+          </div>
+
+          <div class="loc-box">
+            <div class="loc-icon">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            <div class="loc-text">
+              Seg a Sex: 09h às 20h<br>
+              Sáb: 09h às 16h
+            </div>
+          </div>
         </div>
 
-        <a href="https://maps.app.goo.gl/zu5mgzKGQoPJKFhV9" target="_blank" class="map-button"
-           onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/MAPA'});">
-          Abrir mapa no Google Maps
-        </a>
-      </div>
-    </div>
+        <!-- DIREITA: foto + mapa + botão centralizado -->
+        <div class="location-right">
+          <div class="loc-photo">
+            <img src="https://convidatasshop.wordpress.com/wp-content/uploads/2026/01/2026-03-26.webp"
+                 alt="Fachada Tefinha Barbearia">
+          </div>
 
-    <a href="https://wa.me/5563991396063?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Tefinha%20Barbearia" class="whatsapp-button" target="_blank"
+          <div class="loc-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.9892497302135!2d-48.34471012614799!3d-10.181527909979414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9324cb6e80722ac3%3A0x4ac054049c577179!2sTefinha%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1774556844662!5m2!1spt-BR!2sbr"
+              loading="lazy"
+              allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="loc-button-wrapper">
+            <a href="https://maps.app.goo.gl/zu5mgzKGQoPJKFhV9"
+               target="_blank"
+               class="btn-outline-green"
+               onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/MAPA'});">
+              ABRIR GOOGLE MAPS
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/5563991396063?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Tefinha%20Barbearia"
+       class="whatsapp-button"
+       target="_blank"
        onclick="gtag('event', 'conversion', {'send_to': 'AW-17078584708/WHATSAPP'});">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
-  </div>
-  <script>
-    const observerOptions = {
-      threshold: 0.1
-    };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+  </div>
+
+  <script>
+    const obs = new IntersectionObserver((entries, o) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          o.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.intro-text, .intro-img, .section-title, .plan-card, .protese-section, .info-section').forEach(element => {
-      observer.observe(element);
-    });
+    document.querySelectorAll('.animate').forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
